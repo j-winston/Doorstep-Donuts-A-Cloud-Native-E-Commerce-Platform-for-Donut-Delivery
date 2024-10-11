@@ -30,7 +30,7 @@ stages:
           - script: dotnet build --configuration Release --no-restore 
             displayName: 'Build the project'
 
-          - script: dotnet publish --configuration Release
+          - script: dotnet publish --configuration Release -o '$(Pipeline.Workspace)'
             displayName: 'Publish .NET Application'
 
         # Run unit tests 
