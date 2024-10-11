@@ -59,7 +59,7 @@ stages:
             displayName: 'Deploym to Azure App Service'
             inputs:
               azureSubscription: 'AzureServiceConnection' 
-              WebAppName: 'doorstop-donuts-dev'
+              WebAppName: 'doorstep-donuts-dev'
               Package: '$(Pipeline.Workspace)/drop'
           
 
