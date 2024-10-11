@@ -62,7 +62,7 @@ stages:
               azureSubscription: 'AzureServiceConnection' 
               WebAppName: 'doorstep-donuts-dev'
               AppSettings: '-WEBSITE_RUN_FROM_PACKAGE 0'
-              Package: '$(Pipeline.Workspace)/drop'
+              packageForLinux : '$(Pipeline.Workspace)/drop'
           
 
               
