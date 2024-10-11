@@ -55,8 +55,8 @@ stages:
           - download: current
             artifact: drop 
 
-          - task: AzureWebApp@1
-            displayName: 'Deploym to Azure App Service'
+          - task: AzureRmWebAppDeployment@3
+            displayName: 'Deploy to Azure App Service'
             inputs:
               azureSubscription: 'AzureServiceConnection' 
               WebAppName: 'doorstep-donuts-dev'
