@@ -1,19 +1,66 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
+# Starter pipeline Start with a minimal pipeline that you can customize to build and deploy your code. Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
 trigger:
 - Main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+stages:
+  - stage: Build 
+    displayName: 'Build and Test'
+    jobs:
+      - job: Build 
+        displayName: 'Build the Project'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - task: UseDotNet@2
+            inputs:
+              packageType: 'sdk'
+              version: '8.x'
+              installationPath: $(Agent.ToolsDirectory)/dotnet
+        # Restore Dependencie
+          - script: dotnet restore
+            displayName: 'Restore Dependencies'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+        # Build in Release Mode
+          - script: dotnet build --configuration Release --no-restore 
+            displayName: 'Build the project'
+
+        # Run unit tests 
+          - script: dotnet test --configuration Release --no-build --verbosity normal 
+            displayName: 'Run tests'
+
+        # Publish build artificats 
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish Artificats'
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop' 
+              publishLocation: 'Container'
+
+  - stage: Deploy_Dev
+    displayName: 'Deploy to Development'
+    dependsOn: Build
+    condition: succeeded() 
+
+    jobs:
+      - job: DeployDev
+        displayName: 'Deploy to Azure App Service'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - download: current
+            artifact: drop 
+
+          - task: AzureWebApp@1
+            displayName: 'Deploym to Azure App Service'
+            inputs:
+              azureSubscription: 'AzureServiceConnection' 
+              WebAppName: 'doorstop-donuts-dev'
+              Package: '$(Pipeline.Workspace)/drop'
+          
+
+              
