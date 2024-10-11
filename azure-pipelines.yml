@@ -3,6 +3,7 @@
 
 trigger:
 - Main
+- pipeline-fix
 
 pool:
   vmImage: 'ubuntu-latest'
