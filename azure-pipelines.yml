@@ -30,6 +30,9 @@ stages:
           - script: dotnet build --configuration Release --no-restore 
             displayName: 'Build the project'
 
+          - script: dotnet publish --configuration Release
+            displayName: 'Publish .NET Application'
+
         # Run unit tests 
           - script: dotnet test --configuration Release --no-build --verbosity normal 
             displayName: 'Run tests'
@@ -61,7 +64,6 @@ stages:
             inputs:
               azureSubscription: 'AzureServiceConnection' 
               WebAppName: 'doorstep-donuts-dev'
-              AppSettings: '-WEBSITE_RUN_FROM_PACKAGE 0'
               packageForLinux : '$(Pipeline.Workspace)/drop'
           
 
