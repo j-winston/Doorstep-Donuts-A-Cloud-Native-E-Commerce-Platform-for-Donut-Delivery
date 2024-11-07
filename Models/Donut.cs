@@ -1,9 +1,9 @@
 namespace e_commerce.Models;
+
+public class Donut
 {
-    public class Donut
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
+    public int DonutId { get; set; }
+    public string Name { get; set; } = string.Empty;
     public string? ShortDescription { get; set; }
     public string? LongDescription { get; set; }
     public string? AllergyInformation { get; set; }
@@ -13,7 +13,7 @@ namespace e_commerce.Models;
     public bool IsDonutofTheDay { get; set; }
     public bool InStock { get; set; }
     public int CategoryId { get; set; }
-    public Category Category { get; set; }
+    public Category Category { get; set; } = default!;
 
 }
-}
+
