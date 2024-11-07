@@ -16,7 +16,8 @@ public class MockDonutRepository : IDonutRepository
                 Price = 3.5M,
                 Category = _categoryRepository.AllCategories.ToList()[1],
                 ImageUrl = "",
-                ImageThumbnailUrl = ""
+                ImageThumbnailUrl = "",
+                IsDonutofTheDay = false
             },
             new Donut
             {
@@ -27,7 +28,8 @@ public class MockDonutRepository : IDonutRepository
                 Price = 2.0M,
                 Category = _categoryRepository.AllCategories.ToList()[1],
                 ImageUrl = "",
-                ImageThumbnailUrl = ""
+                ImageThumbnailUrl = "",
+                IsDonutofTheDay = false
             },
             new Donut
             {
@@ -38,7 +40,9 @@ public class MockDonutRepository : IDonutRepository
                 Price = 2.5M,
                 Category = _categoryRepository.AllCategories.ToList()[0],
                 ImageUrl = "",
-                ImageThumbnailUrl = ""
+                ImageThumbnailUrl = "",
+                IsDonutofTheDay = false
+
             },
             new Donut
             {
@@ -49,7 +53,8 @@ public class MockDonutRepository : IDonutRepository
                 Price = 3.0M,
                 Category = _categoryRepository.AllCategories.ToList()[2],
                 ImageUrl = "",
-                ImageThumbnailUrl = ""
+                ImageThumbnailUrl = "",
+                IsDonutofTheDay = false
             },
             new Donut
             {
@@ -60,7 +65,9 @@ public class MockDonutRepository : IDonutRepository
                 Price = 2.75M,
                 Category = _categoryRepository.AllCategories.ToList()[2],
                 ImageUrl = "",
-                ImageThumbnailUrl = ""
+                ImageThumbnailUrl = "",
+                IsDonutofTheDay = false
+
             }
         };
 
