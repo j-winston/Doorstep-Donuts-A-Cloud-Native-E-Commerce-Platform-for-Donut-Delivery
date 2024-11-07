@@ -15,6 +15,8 @@ public class DonutController : Controller
 
     public IActionResult List()
     {
+        ViewBag.CurrentCategory = "Cake Donuts";
+
         return View(_donutRepository.AllDonuts);
     }
 
