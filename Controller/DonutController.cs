@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using e_commerce.ViewModels;
 
 namespace e_commerce.Models;
 
@@ -15,10 +16,13 @@ public class DonutController : Controller
 
     public IActionResult List()
     {
-        ViewBag.CurrentCategory = "Cake Donuts";
+        var donutListViewModel = new DonutListViewModel(_donutRepository.AllDonuts, "Cake Donut");
 
-        return View(_donutRepository.AllDonuts);
+        return View(donutListViewModel);
+
     }
+
+
 
 
 

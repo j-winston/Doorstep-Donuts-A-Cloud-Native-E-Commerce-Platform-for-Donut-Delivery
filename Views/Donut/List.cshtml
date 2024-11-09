@@ -1,12 +1,18 @@
+@model e_commerce.ViewModels.DonutListViewModel
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Index</title>
-</head>
-<body>
-		<h1>@ViewBag.CurrentCategory</h1>
-</body>
-</html>
+@if(Model.Donuts != null)
+{
+	<h1>@Model.CurrentCategory</h1>
+	@foreach(var Donut in Model.Donuts)
+	{
+		<h2>@Donut.Name</h2>
+		<h3>@Donut.Price.ToString("c")</h3>
+		<h4>@Donut.Category.CategoryName</h4>
+	}
+}
+
+
+
+
+
+
