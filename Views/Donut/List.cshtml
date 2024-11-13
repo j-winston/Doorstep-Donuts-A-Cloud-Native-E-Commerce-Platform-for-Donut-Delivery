@@ -2,17 +2,35 @@
 
 @if(Model.Donuts != null)
 {
-	<h1>@Model.CurrentCategory</h1>
-	@foreach(var Donut in Model.Donuts)
+<div class="row row-cols-1 row-cols-md-3">
+
+	@foreach(var donut in Model.Donuts)
 	{
-		<h2>@Donut.Name</h2>
-		<h3>@Donut.Price.ToString("c")</h3>
-		<h4>@Donut.Category.CategoryName</h4>
+		<div class="col">
+			<div class="card">
+			<img src="@donut.ImageThumbnailUrl" class="card-img-top" alt="@donut.Name">
+				<div class="card-body donut-button">
+					<h4 class="d-grid"></h4>
+					
+					<div class="d-flex justify-content-between mt-2">
+						<h2 class="text-start">
+							<a class="donut-link">@donut.Name</a>
+						</h2>
+
+						<h5 class="text-nowrap">
+							@donut.Price.ToString("c")
+						</h5>
+					</div>
+				</div>
+			</div>
+		</div>
 	}
+	
+</div>
 }
 
 
 
 
 
-i
+

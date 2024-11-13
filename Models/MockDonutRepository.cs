@@ -16,7 +16,7 @@ public class MockDonutRepository : IDonutRepository
                 Price = 3.5M,
                 Category = _categoryRepository.AllCategories.ToList()[1],
                 ImageUrl = "",
-                ImageThumbnailUrl = "",
+                ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
                 IsDonutofTheDay = false
             },
             new Donut
@@ -28,7 +28,7 @@ public class MockDonutRepository : IDonutRepository
                 Price = 2.0M,
                 Category = _categoryRepository.AllCategories.ToList()[1],
                 ImageUrl = "",
-                ImageThumbnailUrl = "",
+                ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
                 IsDonutofTheDay = false
             },
             new Donut
@@ -39,8 +39,8 @@ public class MockDonutRepository : IDonutRepository
                 LongDescription = "A decadent, chocolatey delight for those who love a rich, dense donut. Topped with colorful sprinkles!",
                 Price = 2.5M,
                 Category = _categoryRepository.AllCategories.ToList()[0],
+                ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
                 ImageUrl = "",
-                ImageThumbnailUrl = "",
                 IsDonutofTheDay = false
 
             },
@@ -53,7 +53,7 @@ public class MockDonutRepository : IDonutRepository
                 Price = 3.0M,
                 Category = _categoryRepository.AllCategories.ToList()[2],
                 ImageUrl = "",
-                ImageThumbnailUrl = "",
+                ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
                 IsDonutofTheDay = false
             },
             new Donut
@@ -65,7 +65,7 @@ public class MockDonutRepository : IDonutRepository
                 Price = 2.75M,
                 Category = _categoryRepository.AllCategories.ToList()[2],
                 ImageUrl = "",
-                ImageThumbnailUrl = "",
+                ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
                 IsDonutofTheDay = false
 
             }
