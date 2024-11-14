@@ -8,9 +8,14 @@ public class DonutListViewModel
     public string? CurrentCategory { get; }
 
 
-    public DonutListViewModel(IEnumerable<Donut> donuts, string currentCategory)
+    public DonutListViewModel(IEnumerable<Donut>? donuts, string currentCategory)
     {
-        Donuts = donuts;
+        if (donuts != null)
+        {
+            Donuts = donuts;
+
+        }
+
         CurrentCategory = currentCategory;
     }
 }

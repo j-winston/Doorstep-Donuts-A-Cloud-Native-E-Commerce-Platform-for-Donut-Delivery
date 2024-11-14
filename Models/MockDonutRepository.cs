@@ -14,10 +14,10 @@ public class MockDonutRepository : IDonutRepository
                 ShortDescription = "Airy, light donut with real Hershey's chocolate frosting.",
                 LongDescription = "A long-time favorite. This donut is just absolutely amazing. Try it for yourself and see!",
                 Price = 3.5M,
-                Category = _categoryRepository.AllCategories.ToList()[1],
+                Category = _categoryRepository?.AllCategories?.ToList()[1] ?? new Category(){CategoryName = "Default Category"},
                 ImageUrl = "",
                 ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
-                IsDonutofTheDay = false
+                IsDonutOfTheDay = false
             },
             new Donut
             {
@@ -26,10 +26,10 @@ public class MockDonutRepository : IDonutRepository
                 ShortDescription = "Classic airy yeast donut with a sweet glaze.",
                 LongDescription = "A light and fluffy donut with a glossy glaze. Perfect for any time of day.",
                 Price = 2.0M,
-                Category = _categoryRepository.AllCategories.ToList()[1],
+                Category = _categoryRepository?.AllCategories?.ToList()[1] ?? new Category(){CategoryName = "Default Category"},
                 ImageUrl = "",
                 ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
-                IsDonutofTheDay = false
+                IsDonutOfTheDay = false
             },
             new Donut
             {
@@ -38,10 +38,10 @@ public class MockDonutRepository : IDonutRepository
                 ShortDescription = "Rich, dense chocolate cake donut with sprinkles.",
                 LongDescription = "A decadent, chocolatey delight for those who love a rich, dense donut. Topped with colorful sprinkles!",
                 Price = 2.5M,
-                Category = _categoryRepository.AllCategories.ToList()[0],
+                Category = _categoryRepository?.AllCategories?.ToList()[1] ?? new Category(){CategoryName = "Default Category"},
                 ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
                 ImageUrl = "",
-                IsDonutofTheDay = false
+                IsDonutOfTheDay = false
 
             },
             new Donut
@@ -51,10 +51,10 @@ public class MockDonutRepository : IDonutRepository
                 ShortDescription = "Light and airy crueller with a blueberry glaze.",
                 LongDescription = "An airy crueller with a unique twist. This blueberry glaze will have you craving more.",
                 Price = 3.0M,
-                Category = _categoryRepository.AllCategories.ToList()[2],
+                Category = _categoryRepository?.AllCategories?.ToList()[1] ?? new Category(){CategoryName = "Default Category"},
                 ImageUrl = "",
                 ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
-                IsDonutofTheDay = false
+                IsDonutOfTheDay = false
             },
             new Donut
             {
@@ -63,10 +63,10 @@ public class MockDonutRepository : IDonutRepository
                 ShortDescription = "Fluffy yeast donut with a maple glaze.",
                 LongDescription = "A Canadian favorite, this maple-glazed yeast donut is light and delicious. A must-try for donut lovers.",
                 Price = 2.75M,
-                Category = _categoryRepository.AllCategories.ToList()[2],
+                Category = _categoryRepository?.AllCategories?.ToList()[1] ?? new Category(){CategoryName = "Default Category"},
                 ImageUrl = "",
                 ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
-                IsDonutofTheDay = false
+                IsDonutOfTheDay = false
 
             }
         };
