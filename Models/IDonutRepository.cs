@@ -2,7 +2,7 @@ namespace e_commerce.Models;
 
 public interface IDonutRepository
 {
-    IEnumerable<Donut> AllDonuts { get; }
-    Donut? GetDonutById(int donutId);
+    public IEnumerable<Donut> AllDonuts { get; }
+    public Donut? GetDonutById(int donutId);
 
 }
