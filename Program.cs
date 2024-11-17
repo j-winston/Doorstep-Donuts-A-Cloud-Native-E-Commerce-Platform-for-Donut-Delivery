@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IDonutRepository, DonutRepository>();
 
+
 builder.Services.AddDbContext<DoorStepDonutsDbContext>(options =>
 {
     //options.UseSqlServer(
@@ -17,7 +18,6 @@ builder.Services.AddDbContext<DoorStepDonutsDbContext>(options =>
 
     options.UseSqlite(builder.Configuration.GetConnectionString("SqliteConnection"));
 });
-
 
 builder.Services.AddControllersWithViews();
 
@@ -35,6 +35,9 @@ if (app.Environment.IsDevelopment())
 
 // Endpoint middleware
 app.MapDefaultControllerRoute();
+
+// Seed data
+DbInitializer.Seed(app);
 
 app.Run();
 
