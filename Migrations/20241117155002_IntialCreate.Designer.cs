@@ -10,7 +10,7 @@ using e_commerce.Models;
 namespace ecommerce.Migrations
 {
     [DbContext(typeof(DoorStepDonutsDbContext))]
-    [Migration("20241117152919_IntialCreate")]
+    [Migration("20241117155002_IntialCreate")]
     partial class IntialCreate
     {
         /// <inheritdoc />

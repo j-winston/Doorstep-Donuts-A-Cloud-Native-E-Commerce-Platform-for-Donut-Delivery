@@ -10,7 +10,7 @@ namespace e_commerce.Models
                 ().ServiceProvider.GetRequiredService<DoorStepDonutsDbContext>();
 
             // Seed data if necessary
-            if (!dbContext.Categories.Any())
+            if (dbContext.Categories != null && !dbContext.Categories.Any())
             {
                 dbContext.Categories.AddRange(new[]
                 {
@@ -23,7 +23,7 @@ namespace e_commerce.Models
             }
 
             // Seed Donuts 
-            if (!dbContext.Donuts.Any())
+            if (dbContext.Categories != null && dbContext.Donuts != null && !dbContext.Donuts.Any())
             {
                 dbContext.Donuts.AddRange(new List<Donut> {
         new Donut
@@ -33,7 +33,8 @@ namespace e_commerce.Models
             ShortDescription = "Airy, light donut with real Hershey's chocolate frosting.",
             LongDescription = "A long-time favorite. This donut is just absolutely amazing. Try it for yourself and see!",
             Price = 3.5M,
-            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Yeast Donuts"),
+            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Yeast Donuts")??
+                throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/long-john-small.jpg",
             IsDonutOfTheDay = false
@@ -45,7 +46,8 @@ namespace e_commerce.Models
             ShortDescription = "Classic chocolate-glazed yeast donut.",
             LongDescription = "This chocolate-glazed yeast donut offers the perfect blend of soft texture and rich flavor.",
             Price = 2.5M,
-            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Yeast Donuts"),
+            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Yeast Donuts")??
+                throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/choc-glazed-small.jpg",
             IsDonutOfTheDay = false
@@ -57,7 +59,8 @@ namespace e_commerce.Models
             ShortDescription = "Rich vanilla-flavored cake donut.",
             LongDescription = "This vanilla-flavored cake donut is dense, rich, and satisfying for any dessert lover.",
             Price = 2.75M,
-            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Cake Donuts"),
+            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Cake Donuts")??
+                throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
             IsDonutOfTheDay = false
@@ -69,7 +72,8 @@ namespace e_commerce.Models
             ShortDescription = "Yeast donut topped with maple frosting.",
             LongDescription = "Enjoy the sweet and savory taste of this maple-glazed yeast donut, perfect for any time of day.",
             Price = 3.0M,
-            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Yeast Donuts"),
+            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Yeast Donuts")??
+                throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/maple-bar-small.jpg",
             IsDonutOfTheDay = false
@@ -81,7 +85,8 @@ namespace e_commerce.Models
             ShortDescription = "Yeast donut with strawberry frosting and sprinkles.",
             LongDescription = "A crowd favorite! This yeast donut is topped with strawberry frosting and colorful sprinkles.",
             Price = 3.25M,
-            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Yeast Donuts"),
+            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Yeast Donuts")??
+                throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/strawberry-sprinkles-small.jpg",
             IsDonutOfTheDay = false
@@ -93,7 +98,8 @@ namespace e_commerce.Models
             ShortDescription = "A twisted yeast donut with a sweet glaze.",
             LongDescription = "This light, airy twisted yeast donut is coated with a perfect sweet glaze, a timeless classic.",
             Price = 2.25M,
-            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Yeast Donuts"),
+            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Yeast Donuts")??
+                throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/glazed-twist-small.jpg",
             IsDonutOfTheDay = false
@@ -104,7 +110,8 @@ namespace e_commerce.Models
             ShortDescription = "A light crueller donut with blueberry glaze.",
             LongDescription = "This light and airy crueller is topped with a delightful blueberry glaze, making it irresistible.",
             Price = 2.75M,
-            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Crueller Donuts"),
+            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Crueller Donuts")??
+                throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/blueberry-crueller-small.jpg",
             IsDonutOfTheDay = true
@@ -116,7 +123,8 @@ namespace e_commerce.Models
             ShortDescription = "Rich chocolate cake donut with sprinkles.",
             LongDescription = "A dense and rich chocolate cake donut topped with colorful sprinkles for extra fun.",
             Price = 3.0M,
-            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Cake Donuts"),
+            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Cake Donuts")??
+                throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/chocolate-cake-small.jpg",
             IsDonutOfTheDay = false
@@ -128,7 +136,8 @@ namespace e_commerce.Models
             ShortDescription = "Crisp crueller donut with a cinnamon-sugar coating.",
             LongDescription = "This crispy crueller is dusted with cinnamon sugar, making it the perfect comfort food.",
             Price = 3.25M,
-            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Crueller Donuts"),
+            Category = dbContext.Categories.FirstOrDefault(c => c.CategoryName == "Crueller Donuts")??
+                throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/cinnamon-crueller-small.jpg",
             IsDonutOfTheDay = false
