@@ -9,7 +9,7 @@ public class MockCategoryRepository : ICategoryRepository
 
             new Category{CategoryId = 2, CategoryName="Yeast Donuts", Description="Pillows of deliciousness"},
 
-            new Category{CategoryId = 3, CategoryName="Crullers",Description="Sweet, delicate airy texture"}
+            new Category{CategoryId = 3, CategoryName="Crueller Donuts",Description="Sweet, delicate airy texture"}
 
         };
 
