@@ -2,12 +2,12 @@
 
 @if(Model.Donuts != null)
 {
-<div class="row row-cols-1 row-cols-md-3">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 px-3">
 
-	@foreach(var donut in Model.Donuts)
+		@foreach(var donut in Model.Donuts)
 	{
-		<div class="col">
-			<div class="card">
+		<div class="col-md-4">
+			<div class="card h-100">
 			<img src="@donut.ImageThumbnailUrl" class="donut-thumbnail" alt="@donut.Name">
 				<div class="card-body donut-button">
 				<p class="d-grid long-description">@donut.LongDescription</p>
@@ -25,10 +25,9 @@
 			</div>
 		</div>
 	}
-	
+
 </div>
 }
-
 
 
 
