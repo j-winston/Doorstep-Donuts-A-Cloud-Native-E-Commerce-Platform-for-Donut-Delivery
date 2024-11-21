@@ -1,0 +1,19 @@
+@model Donut 
+
+@if (@Model != null)
+{
+	<h3>@Model.Name</h3>
+<div class="row gx-5">
+	<img alt="@Model.Name" src="@Model.ImageThumbnailUrl" class="img-fluid col-5"/> 
+	<div class="col-7">
+		<h4>@Model.ShortDescription</h4>
+		<p>@Model.LongDescription</p>
+		<h5>@Model.Price.ToString("c")</h5>
+		<div class="addToCart">
+			<p class="button"></p>
+		</div>
+	</div>
+</div>
+}
+
+

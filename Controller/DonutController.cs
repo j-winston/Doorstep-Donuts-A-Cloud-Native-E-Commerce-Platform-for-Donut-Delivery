@@ -22,8 +22,12 @@ public class DonutController : Controller
 
     }
 
+    public IActionResult Details(int id)
+    {
+        var donut = _donutRepository?.GetDonutById(id);
 
-
-
-
+        if (donut == null)
+            return NotFound();
+        return View(donut);
+    }
 }

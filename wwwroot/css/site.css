@@ -91,3 +91,12 @@ p.long-description {
 	color: #5C4033;
 	/* Chocolate Brown */
 }
+
+/* Details Page */
+
+.pull-right {
+	margin-right: 40px;
+	margin-top: 40px;
+	text-align: right;
+
+}

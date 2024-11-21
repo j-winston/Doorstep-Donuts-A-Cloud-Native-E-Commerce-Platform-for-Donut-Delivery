@@ -33,7 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-// Endpoint middleware
+// Default convention based routing middleware
 app.MapDefaultControllerRoute();
 
 // Seed data
