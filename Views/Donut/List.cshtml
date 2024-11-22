@@ -14,7 +14,7 @@
 					
 					<div class="d-flex justify-content-between mt-2">
 						<h2 class="text-start">
-							<a class="donut-link">@donut.Name</a>
+							<a class="donut-link" asp-controller="Donut" asp-action="Details" asp-route-id="@donut.DonutId">@donut.Name</a>
 						</h2>
 
 						<h5 class="text-nowrap donut-price">
