@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using e_commerce.ViewModels;
+using e_commerce.Models;
 
-namespace e_commerce.Models;
+namespace e_commerce.Controllers;
 
 public class DonutController : Controller
 {

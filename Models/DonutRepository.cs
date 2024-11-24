@@ -27,6 +27,16 @@ namespace e_commerce.Models
             return _doorStepDonutsDbContext?.Donuts?.Include(c => c.Category).FirstOrDefault(d => d.DonutId == donutId);
         }
 
+        public IEnumerable<Donut>? DonutsOfTheWeek
+        {
+            get
+            {
+                return _doorStepDonutsDbContext?.Donuts?.Include(c => c.Category).Where(d => d.IsDonutOfTheWeek);
+
+
+            }
+        }
+
         // registered with di container. using construction injection
         public DonutRepository(DoorStepDonutsDbContext doorStepDonutsDbContext)
         {

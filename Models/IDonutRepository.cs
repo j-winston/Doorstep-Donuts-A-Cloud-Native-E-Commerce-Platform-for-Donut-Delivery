@@ -4,5 +4,6 @@ public interface IDonutRepository
 {
     public IEnumerable<Donut>? AllDonuts { get; }
     public Donut? GetDonutById(int donutId);
+    public IEnumerable<Donut>? DonutsOfTheWeek { get; }
 
 }
