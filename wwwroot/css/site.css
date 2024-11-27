@@ -78,6 +78,12 @@ h4 {
 
 }
 
+.carousel-inner img {
+	height: 500px;
+	object-fit: cover;
+	width: 100%;
+}
+
 .container {
 	margin-top: 2rem;
 }

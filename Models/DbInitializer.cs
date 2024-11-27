@@ -135,7 +135,7 @@ namespace e_commerce.Models
             ImageUrl = "",
             ImageThumbnailUrl = "/images/chocolate-cake-small.jpg",
             IsDonutOfTheDay = false,
-            IsDonutOfTheWeek = false
+            IsDonutOfTheWeek = true
         },
         new Donut
         {
@@ -149,7 +149,7 @@ namespace e_commerce.Models
             ImageUrl = "",
             ImageThumbnailUrl = "/images/cinnamon-crueller-small.jpg",
             IsDonutOfTheDay = false,
-            IsDonutOfTheWeek = false
+            IsDonutOfTheWeek = true
         }
     });
 
