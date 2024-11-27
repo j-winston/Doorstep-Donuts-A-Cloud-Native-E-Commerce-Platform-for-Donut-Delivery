@@ -4,6 +4,8 @@ public class MockDonutRepository : IDonutRepository
 {
     private readonly ICategoryRepository _categoryRepository = new MockCategoryRepository();
 
+    public IEnumerable<Donut>? DonutsOfTheWeek { get; }
+
     public IEnumerable<Donut> AllDonuts =>
         new List<Donut>
         {
@@ -17,7 +19,8 @@ public class MockDonutRepository : IDonutRepository
                 Category = _categoryRepository?.AllCategories?.ToList()[1] ?? new Category(){CategoryName = "Default Category"},
                 ImageUrl = "",
                 ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
-                IsDonutOfTheDay = false
+                IsDonutOfTheDay = false,
+                IsDonutOfTheWeek = true
             },
             new Donut
             {
@@ -29,7 +32,9 @@ public class MockDonutRepository : IDonutRepository
                 Category = _categoryRepository?.AllCategories?.ToList()[1] ?? new Category(){CategoryName = "Default Category"},
                 ImageUrl = "",
                 ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
-                IsDonutOfTheDay = false
+                IsDonutOfTheDay = false,
+                IsDonutOfTheWeek = true
+
             },
             new Donut
             {
@@ -41,7 +46,8 @@ public class MockDonutRepository : IDonutRepository
                 Category = _categoryRepository?.AllCategories?.ToList()[1] ?? new Category(){CategoryName = "Default Category"},
                 ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
                 ImageUrl = "",
-                IsDonutOfTheDay = false
+                IsDonutOfTheDay = false,
+                IsDonutOfTheWeek = true
 
             },
             new Donut
@@ -54,7 +60,9 @@ public class MockDonutRepository : IDonutRepository
                 Category = _categoryRepository?.AllCategories?.ToList()[1] ?? new Category(){CategoryName = "Default Category"},
                 ImageUrl = "",
                 ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
-                IsDonutOfTheDay = false
+                IsDonutOfTheDay = false,
+                IsDonutOfTheWeek = false
+
             },
             new Donut
             {
@@ -66,11 +74,16 @@ public class MockDonutRepository : IDonutRepository
                 Category = _categoryRepository?.AllCategories?.ToList()[1] ?? new Category(){CategoryName = "Default Category"},
                 ImageUrl = "",
                 ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
-                IsDonutOfTheDay = false
+                IsDonutOfTheDay = false,
+                IsDonutOfTheWeek = false
+
 
             }
         };
 
     public Donut? GetDonutById(int donutId) => AllDonuts.FirstOrDefault(d => d.DonutId == donutId);
+
 }
+
+
 

@@ -31,7 +31,7 @@ namespace e_commerce.Models
         {
             get
             {
-                return _doorStepDonutsDbContext?.Donuts?.Include(c => c.Category).Where(d => d.IsDonutOfTheWeek);
+                return _doorStepDonutsDbContext?.Donuts?.Include(c => c.Category).Where(d => d.IsDonutOfTheWeek).ToList();
 
 
             }

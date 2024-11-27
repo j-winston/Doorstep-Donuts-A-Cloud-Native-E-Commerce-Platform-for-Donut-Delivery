@@ -2,6 +2,7 @@ namespace e_commerce.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 using e_commerce.Models;
+using e_commerce.ViewModels;
 
 public class HomeController : Controller
 {
@@ -17,7 +18,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View(_donutRepository.AllDonuts);
+        var donutsOfTheWeek = _donutRepository?.DonutsOfTheWeek;
+        var homeViewModel = new HomeViewModel(donutsOfTheWeek);
+
+        return View(homeViewModel);
     }
 }
 

@@ -37,7 +37,8 @@ namespace e_commerce.Models
                 throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/long-john-small.jpg",
-            IsDonutOfTheDay = false
+            IsDonutOfTheDay = false,
+            IsDonutOfTheWeek = true
         },
         new Donut
         {
@@ -50,7 +51,8 @@ namespace e_commerce.Models
                 throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/choc-glazed-small.jpg",
-            IsDonutOfTheDay = false
+            IsDonutOfTheDay = false,
+            IsDonutOfTheWeek = true
         },
         new Donut
         {
@@ -63,7 +65,8 @@ namespace e_commerce.Models
                 throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/pink-sprinkles.jpg",
-            IsDonutOfTheDay = false
+            IsDonutOfTheDay = false,
+            IsDonutOfTheWeek = true
         },
         new Donut
         {
@@ -76,7 +79,8 @@ namespace e_commerce.Models
                 throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/maple-bar-small.jpg",
-            IsDonutOfTheDay = false
+            IsDonutOfTheDay = false,
+            IsDonutOfTheWeek = false
         },
         new Donut
         {
@@ -89,7 +93,8 @@ namespace e_commerce.Models
                 throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/strawberry-sprinkles-small.jpg",
-            IsDonutOfTheDay = false
+            IsDonutOfTheDay = false,
+            IsDonutOfTheWeek = false
         },
         new Donut
         {
@@ -102,7 +107,8 @@ namespace e_commerce.Models
                 throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/glazed-twist-small.jpg",
-            IsDonutOfTheDay = false
+            IsDonutOfTheDay = false,
+            IsDonutOfTheWeek = false
         },
         new Donut
         {
@@ -114,7 +120,8 @@ namespace e_commerce.Models
                 throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/blueberry-crueller-small.jpg",
-            IsDonutOfTheDay = true
+            IsDonutOfTheDay = true,
+            IsDonutOfTheWeek = false
         },
         new Donut
         {
@@ -127,7 +134,8 @@ namespace e_commerce.Models
                 throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/chocolate-cake-small.jpg",
-            IsDonutOfTheDay = false
+            IsDonutOfTheDay = false,
+            IsDonutOfTheWeek = false
         },
         new Donut
         {
@@ -140,7 +148,8 @@ namespace e_commerce.Models
                 throw new InvalidOperationException("Category 'Yeast Donuts' does not exist in the database."),
             ImageUrl = "",
             ImageThumbnailUrl = "/images/cinnamon-crueller-small.jpg",
-            IsDonutOfTheDay = false
+            IsDonutOfTheDay = false,
+            IsDonutOfTheWeek = false
         }
     });
 

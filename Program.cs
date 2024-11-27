@@ -36,9 +36,6 @@ if (app.Environment.IsDevelopment())
 // Default convention based routing middleware
 app.MapDefaultControllerRoute();
 
-app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
 
 // Seed data
 DbInitializer.Seed(app);
