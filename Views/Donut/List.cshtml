@@ -2,13 +2,13 @@
 
 @if(Model.Donuts != null)
 {
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 px-3">
+	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 px-3">
 		@foreach(var donut in Model.Donuts)
 		{
 			<partial name="_DonutCard" model="donut"/>
 		}
-
-</div>
+	
+	</div>
 }
 
 
