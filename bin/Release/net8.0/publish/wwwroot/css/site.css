@@ -1,4 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&family=Quicksand:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #F8C8DC;
+	/* Baby Pink */
+	color: #5C4033;
+	/* Chocolate Brown */
+	padding-top: 56px;
+
+
+}
+
+/* Logo */
+.logo {
+	font-family: 'Pacifico', cursive;
+	font-size: 2.5rem;
+	color: #FFFDD0;
+	/* Cream White */
+	text-shadow: 1px 1px 2px #333333;
+}
+
+/* Navigation */
+.nav {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #FFFDD0;
+	/* Cream White */
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 700;
+	color: #D32F2F;
+	/* Raspberry Red */
+}
+
+/* Body Text */
+
 .navbar {
-	color: #FFF5E1;
-	background-color: #ffb6c1 !important;
+	background-color: #5c4033 !important;
+	height: 56px;
+
+
+}
+
+.donut-link {
+	color: #d32f2f;
+	font-weight: 800;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+
+.donut-price {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.2rem;
+
+	color: #D32F2F;
+
+}
+
+
+.card {
+	height: 300px;
+
+	border-radius: 5px;
+
+}
+
+.donut-thumbnail {
+	height: 170px;
+	object-fit: cover;
+
+}
+
+.carousel-inner img {
+	height: 500px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.container {
+	margin-top: 2rem;
+}
+
+
+
+
+/* Card Formatting */
+p.long-description {
+	font-family: 'Open Sans', sans-serif;
+	font-size: .8rem;
+	line-height: 1.5;
+	font-weight: 600;
+	color: #5C4033;
+	/* Chocolate Brown */
+}
+
+/* Details Page */
+
+.pull-right {
+	margin-right: 40px;
+	margin-top: 40px;
+	text-align: right;
+
+}
+
+.detail-img {
+	height: 400px;
+	object-fit: cover;
+
+}
+
+.detail-background {
+	background-color: #ffffff;
 }
