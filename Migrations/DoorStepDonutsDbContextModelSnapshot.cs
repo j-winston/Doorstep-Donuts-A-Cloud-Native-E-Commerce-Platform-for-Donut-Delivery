@@ -81,6 +81,28 @@ namespace ecommerce.Migrations
                     b.ToTable("Donuts");
                 });
 
+            modelBuilder.Entity("e_commerce.ShoppingCartItem", b =>
+                {
+                    b.Property<int>("ShoppingCartItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("DonutId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ShoppingCartId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ShoppingCartItemId");
+
+                    b.HasIndex("DonutId");
+
+                    b.ToTable("ShoppingCartItems");
+                });
+
             modelBuilder.Entity("e_commerce.Models.Donut", b =>
                 {
                     b.HasOne("e_commerce.Models.Category", "Category")
@@ -90,6 +112,17 @@ namespace ecommerce.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("e_commerce.ShoppingCartItem", b =>
+                {
+                    b.HasOne("e_commerce.Models.Donut", "Donut")
+                        .WithMany()
+                        .HasForeignKey("DonutId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Donut");
                 });
 
             modelBuilder.Entity("e_commerce.Models.Category", b =>
