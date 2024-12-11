@@ -8,6 +8,7 @@ namespace e_commerce.Models
 
         public DbSet<Donut>? Donuts { get; set; }
         public DbSet<Category>? Categories { get; set; }
+
         public DbSet<ShoppingCartItem>? ShoppingCartItems { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
