@@ -6,5 +6,6 @@ public interface IShoppingCart
     int RemoveFromCart(Donut donut);
     void ClearCart();
     decimal GetShoppingCartTotal();
+    List<ShoppingCartItem>? GetShoppingCartItems();
     List<ShoppingCartItem> ShoppingCartItems { get; set; }
 }
