@@ -1,4 +1,5 @@
 namespace e_commerce.Models;
+using Microsoft.EntityFrameworkCore;
 
 public class ShoppingCart : IShoppingCart
 {
@@ -105,19 +106,34 @@ public class ShoppingCart : IShoppingCart
 
     public List<ShoppingCartItem>? GetShoppingCartItems()
     {
-        return ShoppingCartItems ??= _dbContext.ShoppingCartItems.Where(c =>
+        return _dbContext?.ShoppingCartItems?.Where(c =>
                 c.ShoppingCartId == ShoppingCartId).Include(s => s.Donut).ToList();
 
     }
+
     public void ClearCart()
     {
+        // Remove all items from the shopping cart
+        var cartItems = _dbContext?.ShoppingCartItems?.Where(c => c.ShoppingCartId == ShoppingCartId);
 
+        if (cartItems is not null)
+        {
+            _dbContext?.RemoveRange(cartItems);
+
+            _dbContext?.SaveChanges();
+        }
 
     }
 
     public decimal GetShoppingCartTotal()
     {
-        return 2.2m;
+        decimal? total = _dbContext.ShoppingCartItems?.Where(c => c.ShoppingCartId == ShoppingCartId)
+            .Select(c => c.Donut.Price * c.Amount).Sum();
+
+        total ??= 0.00m;
+
+        return (decimal)total;
+
 
     }
 
