@@ -5,6 +5,11 @@
 			<img src="@Model.ImageThumbnailUrl" class="donut-thumbnail" alt="@Model.Name">
 				<div class="card-body donut-button">
 				<p class="d-grid long-description">@Model.LongDescription</p>
+				<a class="btn btn-secondary"
+					asp-controller="ShoppingCart"
+					asp-action="AddToShoppingCart"
+					asp-route-donutId="@Model.DonutId"> + Add to cart </a> 
+
 					
 					<div class="d-flex justify-content-between mt-2">
 						<h2 class="text-start">

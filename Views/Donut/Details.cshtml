@@ -12,7 +12,12 @@
 				<p class="donut-price">@Model.Price.ToString("c")</p>
 		
 				<div class="addToCart">
-					<p class="button"></p>
+					<p class="button">
+				<a href="" class="btn btn-primary"
+				asp-controller="ShoppingCart"
+				asp-action="AddToShoppingCart"
+				asp-route-donutId="@Model.DonutId">Add to Cart</a>
+			</p>
 				</div>
 			</div>
 	</div>
